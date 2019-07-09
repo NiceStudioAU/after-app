@@ -48,7 +48,7 @@ class TheFactsService {
 		}
     }
     
-    async deleteFacts(userID: string, selectedDay: string) {
+    async deleteFacts(userID: string) {
         const entries = await this.getAllFacts()
         const currentEntry = entries.filter(entry => entry.userID === userID)[0]
 		if (currentEntry) {
