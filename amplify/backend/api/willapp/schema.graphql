@@ -4,3 +4,13 @@ type DiaryEntry @model {
   userID: String
   diaryBody: String
 }
+
+type TheFacts @model {
+  id: ID!
+  userID: String
+  birthName: String
+  nickName: String
+  height: String
+  eyeColour: String
+  hairColour: String
+}

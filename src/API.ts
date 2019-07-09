@@ -19,6 +19,30 @@ export type DeleteDiaryEntryInput = {
   id?: string | null,
 };
 
+export type CreateTheFactsInput = {
+  id?: string | null,
+  userID?: string | null,
+  birthName?: string | null,
+  nickName?: string | null,
+  height?: string | null,
+  eyeColour?: string | null,
+  hairColour?: string | null,
+};
+
+export type UpdateTheFactsInput = {
+  id: string,
+  userID?: string | null,
+  birthName?: string | null,
+  nickName?: string | null,
+  height?: string | null,
+  eyeColour?: string | null,
+  hairColour?: string | null,
+};
+
+export type DeleteTheFactsInput = {
+  id?: string | null,
+};
+
 export type ModelDiaryEntryFilterInput = {
   id?: ModelIDFilterInput | null,
   date?: ModelStringFilterInput | null,
@@ -53,6 +77,19 @@ export type ModelStringFilterInput = {
   notContains?: string | null,
   between?: Array< string | null > | null,
   beginsWith?: string | null,
+};
+
+export type ModelTheFactsFilterInput = {
+  id?: ModelIDFilterInput | null,
+  userID?: ModelStringFilterInput | null,
+  birthName?: ModelStringFilterInput | null,
+  nickName?: ModelStringFilterInput | null,
+  height?: ModelStringFilterInput | null,
+  eyeColour?: ModelStringFilterInput | null,
+  hairColour?: ModelStringFilterInput | null,
+  and?: Array< ModelTheFactsFilterInput | null > | null,
+  or?: Array< ModelTheFactsFilterInput | null > | null,
+  not?: ModelTheFactsFilterInput | null,
 };
 
 export type CreateDiaryEntryMutationVariables = {
@@ -97,6 +134,57 @@ export type DeleteDiaryEntryMutation = {
   } | null,
 };
 
+export type CreateTheFactsMutationVariables = {
+  input: CreateTheFactsInput,
+};
+
+export type CreateTheFactsMutation = {
+  createTheFacts:  {
+    __typename: "TheFacts",
+    id: string,
+    userID: string | null,
+    birthName: string | null,
+    nickName: string | null,
+    height: string | null,
+    eyeColour: string | null,
+    hairColour: string | null,
+  } | null,
+};
+
+export type UpdateTheFactsMutationVariables = {
+  input: UpdateTheFactsInput,
+};
+
+export type UpdateTheFactsMutation = {
+  updateTheFacts:  {
+    __typename: "TheFacts",
+    id: string,
+    userID: string | null,
+    birthName: string | null,
+    nickName: string | null,
+    height: string | null,
+    eyeColour: string | null,
+    hairColour: string | null,
+  } | null,
+};
+
+export type DeleteTheFactsMutationVariables = {
+  input: DeleteTheFactsInput,
+};
+
+export type DeleteTheFactsMutation = {
+  deleteTheFacts:  {
+    __typename: "TheFacts",
+    id: string,
+    userID: string | null,
+    birthName: string | null,
+    nickName: string | null,
+    height: string | null,
+    eyeColour: string | null,
+    hairColour: string | null,
+  } | null,
+};
+
 export type GetDiaryEntryQueryVariables = {
   id: string,
 };
@@ -131,6 +219,46 @@ export type ListDiaryEntrysQuery = {
   } | null,
 };
 
+export type GetTheFactsQueryVariables = {
+  id: string,
+};
+
+export type GetTheFactsQuery = {
+  getTheFacts:  {
+    __typename: "TheFacts",
+    id: string,
+    userID: string | null,
+    birthName: string | null,
+    nickName: string | null,
+    height: string | null,
+    eyeColour: string | null,
+    hairColour: string | null,
+  } | null,
+};
+
+export type ListTheFactssQueryVariables = {
+  filter?: ModelTheFactsFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListTheFactssQuery = {
+  listTheFactss:  {
+    __typename: "ModelTheFactsConnection",
+    items:  Array< {
+      __typename: "TheFacts",
+      id: string,
+      userID: string | null,
+      birthName: string | null,
+      nickName: string | null,
+      height: string | null,
+      eyeColour: string | null,
+      hairColour: string | null,
+    } | null > | null,
+    nextToken: string | null,
+  } | null,
+};
+
 export type OnCreateDiaryEntrySubscription = {
   onCreateDiaryEntry:  {
     __typename: "DiaryEntry",
@@ -158,5 +286,44 @@ export type OnDeleteDiaryEntrySubscription = {
     date: string | null,
     userID: string | null,
     diaryBody: string | null,
+  } | null,
+};
+
+export type OnCreateTheFactsSubscription = {
+  onCreateTheFacts:  {
+    __typename: "TheFacts",
+    id: string,
+    userID: string | null,
+    birthName: string | null,
+    nickName: string | null,
+    height: string | null,
+    eyeColour: string | null,
+    hairColour: string | null,
+  } | null,
+};
+
+export type OnUpdateTheFactsSubscription = {
+  onUpdateTheFacts:  {
+    __typename: "TheFacts",
+    id: string,
+    userID: string | null,
+    birthName: string | null,
+    nickName: string | null,
+    height: string | null,
+    eyeColour: string | null,
+    hairColour: string | null,
+  } | null,
+};
+
+export type OnDeleteTheFactsSubscription = {
+  onDeleteTheFacts:  {
+    __typename: "TheFacts",
+    id: string,
+    userID: string | null,
+    birthName: string | null,
+    nickName: string | null,
+    height: string | null,
+    eyeColour: string | null,
+    hairColour: string | null,
   } | null,
 };

@@ -28,3 +28,39 @@ export const deleteDiaryEntry = `mutation DeleteDiaryEntry($input: DeleteDiaryEn
   }
 }
 `;
+export const createTheFacts = `mutation CreateTheFacts($input: CreateTheFactsInput!) {
+  createTheFacts(input: $input) {
+    id
+    userID
+    birthName
+    nickName
+    height
+    eyeColour
+    hairColour
+  }
+}
+`;
+export const updateTheFacts = `mutation UpdateTheFacts($input: UpdateTheFactsInput!) {
+  updateTheFacts(input: $input) {
+    id
+    userID
+    birthName
+    nickName
+    height
+    eyeColour
+    hairColour
+  }
+}
+`;
+export const deleteTheFacts = `mutation DeleteTheFacts($input: DeleteTheFactsInput!) {
+  deleteTheFacts(input: $input) {
+    id
+    userID
+    birthName
+    nickName
+    height
+    eyeColour
+    hairColour
+  }
+}
+`;

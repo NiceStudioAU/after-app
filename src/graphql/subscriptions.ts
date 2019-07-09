@@ -28,3 +28,39 @@ export const onDeleteDiaryEntry = `subscription OnDeleteDiaryEntry {
   }
 }
 `;
+export const onCreateTheFacts = `subscription OnCreateTheFacts {
+  onCreateTheFacts {
+    id
+    userID
+    birthName
+    nickName
+    height
+    eyeColour
+    hairColour
+  }
+}
+`;
+export const onUpdateTheFacts = `subscription OnUpdateTheFacts {
+  onUpdateTheFacts {
+    id
+    userID
+    birthName
+    nickName
+    height
+    eyeColour
+    hairColour
+  }
+}
+`;
+export const onDeleteTheFacts = `subscription OnDeleteTheFacts {
+  onDeleteTheFacts {
+    id
+    userID
+    birthName
+    nickName
+    height
+    eyeColour
+    hairColour
+  }
+}
+`;

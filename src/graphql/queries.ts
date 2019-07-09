@@ -26,3 +26,34 @@ export const listDiaryEntrys = `query ListDiaryEntrys(
   }
 }
 `;
+export const getTheFacts = `query GetTheFacts($id: ID!) {
+  getTheFacts(id: $id) {
+    id
+    userID
+    birthName
+    nickName
+    height
+    eyeColour
+    hairColour
+  }
+}
+`;
+export const listTheFactss = `query ListTheFactss(
+  $filter: ModelTheFactsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listTheFactss(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userID
+      birthName
+      nickName
+      height
+      eyeColour
+      hairColour
+    }
+    nextToken
+  }
+}
+`;
