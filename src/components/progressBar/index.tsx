@@ -1,25 +1,26 @@
 import React, { Component } from 'react'
 import { StatusWrapper, StyledText, StatusBar, Status } from './styles'
-import { colours } from '@styles/index'
 
 export interface IProps {
   currentValue: number
   target: number
+  size: 'small' | 'large'
 }
 
 class ProgressBar extends Component<IProps> {
 
   render() {
 
-    const { currentValue, target } = this.props
+    const { currentValue, target, size } = this.props
 
     const label = `${currentValue}/${target} complete`
 
     return (
-      <StatusWrapper>
+      <StatusWrapper size={size}>
         <StyledText>{label}</StyledText>
-        <StatusBar>
+        <StatusBar size={size}>
           <Status
+            size={size}
             target={target}
             currentValue={currentValue}
           />

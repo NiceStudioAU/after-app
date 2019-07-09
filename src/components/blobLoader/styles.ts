@@ -7,4 +7,12 @@ export const Wrapper = styled(View)`
   width: 100%;
   z-index: 100;
   background-color: ${colours.cream.light};
+  justify-content: center;
+  align-items: center;
+`
+export const AnimationWrapper = styled(View)`
+  justify-content: center;
+  align-items: center;
+  height: 200;
+  width: 200;
 `

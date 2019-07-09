@@ -18,11 +18,15 @@ export interface IProps {
 class BackArrow extends Component<IProps> {
 
   onButtonClick = () => {
-    if (this.props.type === 'diary' && this.props.currentEntrySaved) {
-      this.props.fetchDiaryEntries()
-      this.props.navigation.navigate(this.props.destination)
+    if (this.props.type === 'diary') {
+      if (this.props.currentEntrySaved) {
+        this.props.fetchDiaryEntries()
+        this.props.navigation.navigate(this.props.destination)
+      } else {
+        this.props.toggleDiaryModal()
+      }
     } else {
-      this.props.toggleDiaryModal()
+      this.props.navigation.navigate(this.props.destination)
     }
   }
 

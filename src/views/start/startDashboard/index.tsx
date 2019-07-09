@@ -16,36 +16,42 @@ const ButtonData = [
 		subLabel: "Let's lay down the foundations and get get all the facts straight.",
 		progressTarget: 12,
 		progressValue: 3,
+		destination: 'TheFacts'
 	},
 	{
 		label: 'Favourite things',
 		subLabel: 'Everything from music to food, we want to know it all.',
 		progressTarget: 12,
 		progressValue: 6,
+		destination: 'TheFacts'
 	},
 	{
 		label: 'Education',
 		subLabel: "Where did you go and what did you study? Have you done any short courses?",
 		progressTarget: 12,
 		progressValue: 12,
+		destination: 'TheFacts'
 	},
 	{
-		label: 'Special people',
+		label: 'Family and Friends',
 		subLabel: "Let's take the time to reflect on the awesome people in your life.",
 		progressTarget: 12,
 		progressValue: 9,
+		destination: 'TheFacts'
 	},
 	{
 		label: 'Career',
 		subLabel: 'Across the Sahara Desert, through the Amazon rainforest. I want to hear it all.',
 		progressTarget: 12,
 		progressValue: 7,
+		destination: 'TheFacts'
 	},
 	{
 		label: 'Places',
 		subLabel: 'Across the Sahara Desert, through the Amazon rainforest. I want to hear it all.',
 		progressTarget: 12,
 		progressValue: 2,
+		destination: 'TheFacts'
 	},
 ]
 
@@ -75,6 +81,7 @@ class StartDashboard extends Component<IProps> {
 							key={item.index}
 							progressTarget={item.progressTarget}
 							progressValue={item.progressValue}
+							destination={item.destination}
 						/>
 					)}
 					ItemSeparatorComponent={() => <Separator />}

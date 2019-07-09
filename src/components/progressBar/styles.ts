@@ -3,23 +3,23 @@ import styled from 'styled-components'
 import { Text, View } from 'react-native'
 
 export const StatusWrapper = styled(View)`
-  margin-top: ${spacing.xxs};
-  margin-bottom: ${spacing.xxs};
+  margin-top: ${(props: any) => props.size === 'small' ? spacing.xs : spacing.sm};
+  margin-bottom: ${(props: any) => props.size === 'small' ? spacing.xs : spacing.sm};
 `
 export const StatusBar = styled(View)`
   width: 100%;
-  height: ${spacing.xs};
-  border-radius: ${spacing.xs};
+  height: ${(props: any) => props.size === 'small' ? spacing.xs : spacing.sm};
+  border-radius: ${(props: any) => props.size === 'small' ? spacing.xs : spacing.sm};
   background-color: ${colours.white.base};
 `
 export const Status = styled(View)`
-  height: ${spacing.xs};
+  height: ${(props: any) => props.size === 'small' ? spacing.xs : spacing.sm};
   background-color: ${colours.blue.base};
-  border-radius: ${spacing.xs};
+  border-radius: ${(props: any) => props.size === 'small' ? spacing.xs : spacing.sm};
   position: absolute;
   left: 0;
   top: 0;
-  min-width: ${spacing.xs};
+  min-width: ${(props: any) => props.size === 'small' ? spacing.xs : spacing.sm};
   width: ${(props: any) => `${(props.currentValue / props.target) * 100}%`};
 `
 export const StyledText = styled(Text)`
