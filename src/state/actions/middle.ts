@@ -83,3 +83,16 @@ export function setCurrentDay(day) {
     .finally(() => dispatch(httpRequestLoading(false, 'diaryEntry')))
   }
 }
+
+export function saveDiaryEntry(text: string) {
+  return (dispatch, getState) => {
+    dispatch(httpRequestLoading(true, 'saveEntry'))
+    
+    const state = getState()
+    const userID = state.loginState.user.attributes.sub
+    const currentFocusedDay = state.middleState.focusedDay
+    DiaryService.saveEntry(userID, currentFocusedDay, text)  
+    
+    .finally(() => dispatch(httpRequestLoading(false, 'saveEntry')))    
+  }
+}

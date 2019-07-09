@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
 import ScreenHeader from '@components/screenHeader'
-import { DiaryInput,  PopupWrapper, PopupTop, PopupButton, PopupButtonWrapper, PopupBackground, StyledText, ModalWrapper, PopupButtonText, Separator, Wrapper } from './styles'
+import { DiaryInput,  PopupWrapper, PopupTop, PopupButton, PopupButtonWrapper, PopupBackground, StyledText, ModalWrapper, PopupButtonText, Separator, Wrapper,SaveWrapper } from './styles'
 import { colours, fonts, typeSizes, spacing } from '@styles/index'
 import DiaryService from '@services/diaryService'
 import { IDiaryEntry } from '@models/diary'
@@ -10,7 +10,8 @@ import BlobLoader from '@components/blobLoader'
 import MainButton from '@components/button'
 import { Modal, TouchableHighlight } from 'react-native'
 import { NavigationScreenProp } from 'react-navigation'
-import { toggleDiaryModal, toggleEntryState, fetchDiaryEntries } from '@state/actions/middle'
+import { toggleDiaryModal, toggleEntryState, fetchDiaryEntries, saveDiaryEntry } from '@state/actions/middle'
+import SavedAnimation from '@components/savedAnimation';
 
 
 interface IProps {
@@ -22,8 +23,9 @@ interface IProps {
 	source: string
 	navigation: NavigationScreenProp<any, any>
 	toggleDiaryModal: () => void
-	toggleEntryState: (state, saved) => void
+	toggleEntryState: (state: boolean, saved: boolean) => void
 	fetchDiaryEntries: () => void
+	saveDiaryEntry: (text: string) => void
 }
 
 interface IState {
@@ -59,11 +61,10 @@ class DayDetail extends Component<IProps, IState> {
 	}
 
 	saveEntry = () => {
-		const user = this.props.user.attributes.sub
 		if (this.state.text.length === 0) {
-			DiaryService.saveEntry(user, this.props.currentFocusedDay, '...')
+			this.props.saveDiaryEntry('...')
 		} else {
-			DiaryService.saveEntry(user, this.props.currentFocusedDay, this.state.text)
+			this.props.saveDiaryEntry(this.state.text)
 		}
 		this.props.toggleEntryState(false, true)
 	}
@@ -111,6 +112,15 @@ class DayDetail extends Component<IProps, IState> {
 
 		return (
 			<Wrapper>
+				<Modal
+					animationType='fade'
+					transparent={true}
+					visible={loading && source === 'saveEntry'}
+				>
+					<SaveWrapper>
+						<SavedAnimation />
+					</SaveWrapper>
+				</Modal>
 				<Modal 
 					animationType='fade'
 					transparent={true}
@@ -158,6 +168,7 @@ const mapDispatchToProps = dispatch => ({
 	toggleDiaryModal: () => dispatch(toggleDiaryModal()),
 	toggleEntryState: (state, saved) => dispatch(toggleEntryState(state, saved)),
 	fetchDiaryEntries: () => dispatch(fetchDiaryEntries()),
+	saveDiaryEntry: (text) => dispatch(saveDiaryEntry(text))
 })
 
 const mapStateToProps = state => {

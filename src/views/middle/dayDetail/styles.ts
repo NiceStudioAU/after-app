@@ -75,3 +75,9 @@ export const PopupBackground = styled(View)`
   top: 0;
   left: 0;
 `
+export const SaveWrapper = styled(View)`
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+`
