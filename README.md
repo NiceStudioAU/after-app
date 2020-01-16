@@ -50,6 +50,3 @@ expo start
 - **Matilda Rutherford** - _Design and Front End Development_ - [Matilda Rutherford](https://github.com/matildarutherford)
 - **Kara La'Brooy** - _Backend Development and AWS integration_ - [Kara La'Brooy](https://github.com/klabrooy)
 
-### License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
