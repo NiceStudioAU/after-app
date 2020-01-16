@@ -32,21 +32,24 @@ amplify push
 amplify codegen add
 ```
 
-## Running the app:
+### Running the app:
 
 To run Expo
-`expo start`
 
-## Built With
+```
+expo start
+```
+
+### Built With
 
 - [AWS Amplify](https://aws-amplify.github.io/) - to manage users, login and app data
 - [Expo](https://expo.io/) - For running and deploying the react native
 
-## Authors
+### Authors
 
 - **Matilda Rutherford** - _Design and Front End Development_ - [Matilda Rutherford](https://github.com/matildarutherford)
 - **Kara La'Brooy** - _Backend Development and AWS integration_ - [Kara La'Brooy](https://github.com/klabrooy)
 
-## License
+### License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
