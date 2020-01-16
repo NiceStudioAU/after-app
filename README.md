@@ -22,6 +22,10 @@ amplify init
 
 You will be asked to select an environment, select _dev_ to start with.
 
+Choose your editor.
+
+You will be asked to setup a new user.
+
 ```
 amplify push
 amplify codegen add
