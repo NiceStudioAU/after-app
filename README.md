@@ -12,12 +12,6 @@ npm i expo-cli --global
 npm i -g @aws-amplify/cli@multienv
 ```
 
-Install the node modules:
-
-```
-yarn install
-```
-
 ### Create AWS credentials:
 
 To provision the backend:
@@ -34,6 +28,12 @@ amplify codegen add
 ```
 
 ### Running the app:
+
+Install the node modules:
+
+```
+yarn install
+```
 
 To run Expo
 
