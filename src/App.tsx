@@ -7,10 +7,13 @@ import { connect } from 'react-redux'
 
 import Amplify from '@aws-amplify/core'
 import config from '../aws-exports'
+import { CognitoUser } from '@aws-amplify/auth'
+import { View, Text } from 'react-native'
 Amplify.configure(config)
 
 interface IProps {
   navigation: NavigationScreenProp<any, any>
+  user: CognitoUser
 }
 
 class App extends Component<IProps> {
@@ -33,14 +36,15 @@ class App extends Component<IProps> {
     console.log('user', this.props.user)
     return (
       <>
-        {this.state.fontLoaded && (
+      {/* <Text>HELLO WORK</Text> */}
+        {/* {this.state.fontLoaded && ( */}
           <Login>
             <RootStack
               navigation={this.props.navigation}
               screenProps={this.props}
             />
           </Login>
-        )}
+        {/* )} */}
       </>
     )
   }

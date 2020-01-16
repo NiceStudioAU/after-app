@@ -6,6 +6,8 @@ import NewPassword from './newPassword'
 import SignInForm from './signInForm'
 import { ScrollWrapper } from './styles'
 import { userLoggedIn, userPasswordReset, userRequiresNewPassword, userResetCodeSent } from '@state/actions/login'
+import { CognitoUser } from '@aws-amplify/auth'
+import { View, Text } from 'react-native'
 
 export interface IProps {
   children: any

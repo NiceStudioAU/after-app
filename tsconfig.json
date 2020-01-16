@@ -1,47 +1,25 @@
 {
-    "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "jsx": "react",
-        "sourceMap": true,
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "baseUrl": "./",
-        "paths": {
-            "@assets/*": [
-                "src/assets/*"
-            ],
-            "@components/*": [
-                "src/components/*"
-            ],
-            "@constants/*": [
-                "src/constants/*"
-            ],
-            "@graphql/*": [
-                "src/graphql/*"
-            ],
-            "@models/*": [
-                "src/models/*"
-            ],
-            "@navigators/*": [
-                "src/navigators/*"
-            ],
-            "@styles/*": [
-                "src/styles/*"
-            ],
-            "@services/*": [
-                "src/services/*"
-            ],
-            "@state/*": [
-                "src/state/*"
-            ],
-            "@views/*": [
-                "src/views/*"
-            ],
-        },
-        "exclude": [
-            "node_modules",
-        ]
-    }
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
+      "@graphql/*": ["src/graphql/*"],
+      "@models/*": ["src/models/*"],
+      "@navigators/*": ["src/navigators/*"],
+      "@styles/*": ["src/styles/*"],
+      "@services/*": ["src/services/*"],
+      "@state/*": ["src/state/*"],
+      "@views/*": ["src/views/*"]
+    },
+    "exclude": ["node_modules"]
+  }
 }
