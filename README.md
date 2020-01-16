@@ -8,6 +8,7 @@ Install the React Native CLI and the Amplify Multienv CLI:
 
 ```
 npm i -g react-native-cli
+npm install expo-cli --global
 npm i -g @aws-amplify/cli@multienv
 ```
 
