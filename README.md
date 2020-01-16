@@ -43,7 +43,7 @@ expo start
 ### Built With
 
 - [AWS Amplify](https://aws-amplify.github.io/) - to manage users, login and app data
-- [Expo](https://expo.io/) - For running and deploying the react native
+- [Expo](https://expo.io/) - For running and deploying react native
 
 ### Authors
 
